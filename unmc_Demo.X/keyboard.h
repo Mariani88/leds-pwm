@@ -1,7 +1,6 @@
 #ifndef KEYBOARDH
 #define	KEYBOARDH
-
 #include "head.h"
-char read_keyboard();
+int read_keyboard();
 
 #endif	/* KEYBOARDH */

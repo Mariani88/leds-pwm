@@ -8,8 +8,8 @@
       <itemPath>C:/Archivos de programa/Unimic/unmc_01/headers/unmc_config_01.h</itemPath>
       <itemPath>C:/Archivos de programa/Unimic/unmc_01/headers/unmc_rtcc_01.h</itemPath>
       <itemPath>C:/Archivos de programa/Unimic/unmc_01/headers/unmc_inout_02.h</itemPath>
-      <itemPath>keyboard.h</itemPath>
-      <itemPath>head.h</itemPath>
+      <itemPath>C:/leds-tp/unmc_Demo.X/head.h</itemPath>
+      <itemPath>leds.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -20,6 +20,7 @@
                    projectFiles="true">
       <itemPath>main.c</itemPath>
       <itemPath>C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c</itemPath>
+      <itemPath>leds.c</itemPath>
       <itemPath>keyboard.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -32,6 +33,7 @@
     <Elem>C:/Archivos de programa/Unimic/unmc_01/headers</Elem>
     <Elem>C:/Archivos de programa/Unimic/unmc_01/sources</Elem>
     <Elem>.</Elem>
+    <Elem>C:/leds-tp/unmc_Demo.X</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

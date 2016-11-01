@@ -1,5 +1,5 @@
 
-# 1 "main.c"
+# 1 "C:/leds-tp/unmc_Demo.X/keyboard.c"
 
 # 26 "C:\Program Files\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9879,7 +9879,7 @@ void lcd_putrs(const char *ptr);
 #pragma config WPDIS=OFF
 
 # 15 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
-int key = 18;
+char key = 18;
 
 # 17 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
 rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
@@ -9930,7 +9930,7 @@ void Write_RTC(void);
 # 112
 void Read_RTC(void);
 
-# 14 "head.h"
+# 14 "C:/leds-tp/unmc_Demo.X/head.h"
 typedef enum {
 ACTIVE, DESACTIVE, TRIGGED,
 } state;
@@ -9942,51 +9942,45 @@ int mesDisparo = 0;
 int horaDisparo = 0;
 int minDisparo = 0;
 
-# 7 "leds.h"
-void shutdown();
-void on_led(char pressed_key);
+# 5 "C:/leds-tp/unmc_Demo.X/keyboard.h"
+char read_keyboard();
 
-# 4 "keyboard.h"
-int read_keyboard();
+# 4 "C:/leds-tp/unmc_Demo.X/keyboard.c"
+void clear_keyboard(){
+key = 18;
+}
 
-# 33 "main.c"
-void Setup(void)
+char read_keyboard(){
+LATBbits.LATB1=1;LATBbits.LATB2=0;LATBbits.LATB3=0;LATBbits.LATB4=0;
 {
-OSCTUNEbits.INTSRC=1;
-OSCTUNEbits.PLLEN=0;
-OSCCONbits.IRCF0=1;
-OSCCONbits.IRCF1=1;
-OSCCONbits.IRCF2=1;
-OSCCONbits.SCS0=0;
-OSCCONbits.SCS1=0;
-TRISA = 0b01010111;
-TRISB = 0b11100000;
-TRISC = 0;
+if (PORTBbits.RB5==1){key=1;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB5==1){};}
+if (PORTBbits.RB7==1){key=2;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB7==1){};}
+if (PORTBbits.RB6==1){key=3;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB6==1){};}
 
+}
+LATBbits.LATB1=0;LATBbits.LATB2=1;LATBbits.LATB3=0;LATBbits.LATB4=0;
+{
+if (PORTBbits.RB5==1){key=4;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB5==1){};}
+if (PORTBbits.RB7==1){key=5;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB7==1){};}
+if (PORTBbits.RB6==1){key=6;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB6==1){};}
 
+}
+LATBbits.LATB1=0;LATBbits.LATB2=0;LATBbits.LATB3=1;LATBbits.LATB4=0;
+{
+if (PORTBbits.RB5==1){key=7;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB5==1){};}
+if (PORTBbits.RB7==1){key=8;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB7==1){};}
+if (PORTBbits.RB6==1){key=9;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB6==1){};}
 
-ANCON0=0b11111111;
-
-ANCON1=0b11111111;
-
-
-RTCCFGbits.RTCEN=1;
-RTCCFGbits.RTCWREN=1;
-T1CONbits.T1OSCEN=1;
-
-
-
+}
+LATBbits.LATB1=0;LATBbits.LATB2=0;LATBbits.LATB3=0;LATBbits.LATB4=1;
+{
+if (PORTBbits.RB5==1){key=14; while(PORTBbits.RB5==1){};}
+if (PORTBbits.RB7==1){key=0;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB7==1){};}
+if (PORTBbits.RB6==1){key=15; while(PORTBbits.RB6==1){};}
 
 }
 
-# 67
-int main(void){
-Setup();
-shutdown();
-while(1){
 
-# 79
-on_led(read_keyboard());
-}
-return 0;
+
+return key;
 }

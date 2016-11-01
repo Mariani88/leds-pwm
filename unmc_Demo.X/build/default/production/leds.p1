@@ -1,90 +1,48 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"144 C:\Program Files\Microchip\xc8\v1.34\include\plib\rtcc.h
-[s S1028 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1028 . year rsvd mday mon hour wday sec min ]
-"142
-[u S1027 `S1028 1 `uc -> 8 `i `ui -> 4 `i `ul -> 2 `i ]
-[n S1027 . f b w l ]
-"113
-[s S1024 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1024 . rsvd sec min hour ]
-"111
-[u S1023 `S1024 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
-[n S1023 . f b w l ]
-"128
-[s S1026 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S1026 . wday mday mon year ]
-"126
-[u S1025 `S1026 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
-[n S1025 . f b w l ]
-"18 head.h
-[c E8281 0 1 2 .. ]
-[n E8281 . ACTIVE DESACTIVE TRIGGED  ]
-"6359 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
-[s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S446 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"6369
-[s S447 :1 `uc 1 ]
-[n S447 . LB0 ]
-"6372
-[s S448 :1 `uc 1 :1 `uc 1 ]
-[n S448 . . LB1 ]
-"6376
-[s S449 :2 `uc 1 :1 `uc 1 ]
-[n S449 . . LB2 ]
-"6380
-[s S450 :3 `uc 1 :1 `uc 1 ]
-[n S450 . . LB3 ]
-"6384
-[s S451 :4 `uc 1 :1 `uc 1 ]
-[n S451 . . LB4 ]
-"6388
-[s S452 :5 `uc 1 :1 `uc 1 ]
-[n S452 . . LB5 ]
-"6392
-[s S453 :6 `uc 1 :1 `uc 1 ]
-[n S453 . . LB6 ]
-"6396
-[s S454 :7 `uc 1 :1 `uc 1 ]
-[n S454 . . LB7 ]
-"6358
-[u S445 `S446 1 `S447 1 `S448 1 `S449 1 `S450 1 `S451 1 `S452 1 `S453 1 `S454 1 ]
-[n S445 . . . . . . . . . . ]
-"6401
-[v _LATBbits `VS445 ~T0 @X0 0 e@3978 ]
-"5529
-[s S407 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S407 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"5539
-[s S408 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S408 . AN12 AN10 AN8 AN9 . KBI2 KBI3 ]
-"5548
-[s S409 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S409 . INT0 . CTEDG1 CTEDG2 KBI0 KBI1 PGC PGD ]
-"5558
-[s S410 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S410 . RP3 RTCC . SCK1 SDI1 RP9 RP10 ]
-"5567
-[s S411 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S411 . . RP4 VMO VPO SCL1 SDA1 ]
-"5575
-[s S412 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S412 . . REFO RP6 RP7 RP8 ]
-"5582
-[s S413 :2 `uc 1 :1 `uc 1 ]
-[n S413 . . RP5 ]
-"5586
-[s S414 :3 `uc 1 :1 `uc 1 ]
-[n S414 . . CCP2_PA2 ]
-"5528
-[u S406 `S407 1 `S408 1 `S409 1 `S410 1 `S411 1 `S412 1 `S413 1 `S414 1 ]
-[n S406 . . . . . . . . . ]
-"5591
-[v _PORTBbits `VS406 ~T0 @X0 0 e@3969 ]
-[v F8145 `(v ~T0 @X0 1 tf1`ul ]
+"6232 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
+[s S436 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S436 . LATA0 LATA1 LATA2 LATA3 . LATA5 LATA6 LATA7 ]
+"6242
+[s S437 :1 `uc 1 ]
+[n S437 . LA0 ]
+"6245
+[s S438 :1 `uc 1 :1 `uc 1 ]
+[n S438 . . LA1 ]
+"6249
+[s S439 :2 `uc 1 :1 `uc 1 ]
+[n S439 . . LA2 ]
+"6253
+[s S440 :3 `uc 1 :1 `uc 1 ]
+[n S440 . . LA3 ]
+"6257
+[s S441 :4 `uc 1 :1 `uc 1 ]
+[n S441 . . LA4 ]
+"6261
+[s S442 :5 `uc 1 :1 `uc 1 ]
+[n S442 . . LA5 ]
+"6265
+[s S443 :6 `uc 1 :1 `uc 1 ]
+[n S443 . . LA6 ]
+"6269
+[s S444 :7 `uc 1 :1 `uc 1 ]
+[n S444 . . LA7 ]
+"6231
+[u S435 `S436 1 `S437 1 `S438 1 `S439 1 `S440 1 `S441 1 `S442 1 `S443 1 `S444 1 ]
+[n S435 . . . . . . . . . . ]
+"6274
+[v _LATAbits `VS435 ~T0 @X0 0 e@3977 ]
+[v F8149 `(v ~T0 @X0 1 tf1`ul ]
 "161 C:\Program Files\Microchip\xc8\v1.34\include\pic18.h
-[v __delay `JF8145 ~T0 @X0 0 e ]
+[v __delay `JF8149 ~T0 @X0 0 e ]
 [p i __delay ]
+"15 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
+[v _key `i ~T0 @X0 1 e ]
+[i _key
+-> 18 `i
+]
+[; ;headers\unmc_inout_02.h: 15: int key = 18;
+[; ;leds.h: 7: void shutdown();
+[; ;leds.h: 8: void on_led(char pressed_key);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
@@ -7618,36 +7576,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 24: extern int errno;
-[; ;stdio.h: 55: struct __prbuf
-[; ;stdio.h: 56: {
-[; ;stdio.h: 57: char * ptr;
-[; ;stdio.h: 58: void (* func)(char);
-[; ;stdio.h: 59: };
-[; ;conio.h: 17: extern int errno;
-[; ;conio.h: 20: extern void init_uart(void);
-[; ;conio.h: 22: extern char getch(void);
-[; ;conio.h: 23: extern char getche(void);
-[; ;conio.h: 24: extern void putch(char);
-[; ;conio.h: 25: extern void ungetch(char);
-[; ;conio.h: 27: extern __bit kbhit(void);
-[; ;conio.h: 31: extern char * cgets(char *);
-[; ;conio.h: 32: extern void cputs(const char *);
-[; ;stdio.h: 100: extern int cprintf(char *, ...);
-[; ;stdio.h: 105: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 195: extern char * gets(char *);
-[; ;stdio.h: 196: extern int puts(const char *);
-[; ;stdio.h: 197: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 198: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 199: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 200: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 201: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 202: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 206: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 207: extern int printf(const char *, ...);
 [; ;headers\unmc_lcd_216.h: 33: typedef unsigned char int8;
 [; ;headers\unmc_lcd_216.h: 34: typedef unsigned int int16;
 [; ;headers\unmc_lcd_216.h: 35: typedef unsigned long int32;
@@ -7704,439 +7632,156 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WPCFG=OFF ]
 "36
 [p x WPDIS=OFF ]
-"15 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
-[v _key `i ~T0 @X0 1 e ]
-[i _key
--> 18 `i
-]
-[; ;headers\unmc_inout_02.h: 15: int key = 18;
-"17 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
-[v _RtccTimeDate `S1027 ~T0 @X0 1 e ]
-[v _RtccAlrmTimeDate `S1027 ~T0 @X0 1 e ]
-[v _Rtcc_read_TimeDate `S1027 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 17: rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
-"19
-[v _segundo_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 19: char segundo_u;
-"20
-[v _segundo_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 20: char segundo_d;
-"21
-[v _minuto_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 21: char minuto_u;
-"22
-[v _minuto_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 22: char minuto_d;
-"23
-[v _hora_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 23: char hora_u;
-"24
-[v _hora_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 24: char hora_d;
-"25
-[v _fecha_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 25: char fecha_u;
-"26
-[v _fecha_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 26: char fecha_d;
-"27
-[v _mes_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 27: char mes_u;
-"28
-[v _mes_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 28: char mes_d;
-"29
-[v _dia_semana `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 29: char dia_semana;
-"30
-[v _anio_u `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 30: char anio_u;
-"31
-[v _anio_d `uc ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 31: char anio_d;
-"32
-[v _flag `b ~T0 @X0 1 e ]
-[i _flag
--> 0 `i
-]
-[; ;headers\unmc_rtcc_01.h: 32: bit flag=0;
-"33
-[v _i `i ~T0 @X0 1 e ]
-[i _i
--> 0 `i
-]
-[; ;headers\unmc_rtcc_01.h: 33: int i=0;
-"34
-[v _j `i ~T0 @X0 1 e ]
-[i _j
--> 0 `i
-]
-[; ;headers\unmc_rtcc_01.h: 34: int j=0;
-"35
-[v _a `i ~T0 @X0 1 e ]
-[i _a
--> 0 `i
-]
-[; ;headers\unmc_rtcc_01.h: 35: int a=0;
-"36
-[v _b `i ~T0 @X0 1 e ]
-[i _b
--> 0 `i
-]
-[; ;headers\unmc_rtcc_01.h: 36: int b=0;
-"37
-[v _c `i ~T0 @X0 1 e ]
-[i _c
--> 0 `i
-]
-[; ;headers\unmc_rtcc_01.h: 37: int c=0;
-"38
-[v _k `i ~T0 @X0 1 e ]
-[i _k
--> 0 `i
-]
-[; ;headers\unmc_rtcc_01.h: 38: int k=0;
-"39
-[v _anio `i ~T0 @X0 1 e ]
-[i _anio
--> 15 `i
-]
-[; ;headers\unmc_rtcc_01.h: 39: int anio=15;
-"40
-[v _mes `i ~T0 @X0 1 e ]
-[i _mes
--> 9 `i
-]
-[; ;headers\unmc_rtcc_01.h: 40: int mes=9;
-"41
-[v _diasem `i ~T0 @X0 1 e ]
-[i _diasem
--> 3 `i
-]
-[; ;headers\unmc_rtcc_01.h: 41: int diasem=3;
-"42
-[v _dia `i ~T0 @X0 1 e ]
-[i _dia
--> 8 `i
-]
-[; ;headers\unmc_rtcc_01.h: 42: int dia=8;
-"43
-[v _hora `i ~T0 @X0 1 e ]
-[i _hora
--> 18 `i
-]
-[; ;headers\unmc_rtcc_01.h: 43: int hora=18;
-"44
-[v _minuto `i ~T0 @X0 1 e ]
-[i _minuto
--> 30 `i
-]
-[; ;headers\unmc_rtcc_01.h: 44: int minuto=30;
-"45
-[v _segundo `i ~T0 @X0 1 e ]
-[i _segundo
--> 0 `i
-]
-[; ;headers\unmc_rtcc_01.h: 45: int segundo=0;
-"51
-[v _RtccTime `S1023 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 51: rtccTime RtccTime;
-"52
-[v _RtccTimeVal `S1023 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 52: rtccTime RtccTimeVal;
-"53
-[v _RtccDate `S1025 ~T0 @X0 1 e ]
-[; ;headers\unmc_rtcc_01.h: 53: rtccDate RtccDate;
-"55
-[v _buffer2 `uc ~T0 @X0 -> 20 `i e ]
-[; ;headers\unmc_rtcc_01.h: 55: unsigned char buffer2[20];
-[; ;headers\unmc_rtcc_01.h: 57: void DelayFor18TCY(void);
-[; ;headers\unmc_rtcc_01.h: 63: void DelayPORXLCD(void);
-[; ;headers\unmc_rtcc_01.h: 75: void Write_RTC(void);
-[; ;headers\unmc_rtcc_01.h: 112: void Read_RTC(void);
-[; ;head.h: 14: typedef enum {
-[; ;head.h: 15: ACTIVE, DESACTIVE, TRIGGED,
-[; ;head.h: 16: } state;
-"18 head.h
-[v _state_alarm `E8281 ~T0 @X0 1 e ]
-[i _state_alarm
-. `E8281 1
-]
-[; ;head.h: 18: state state_alarm = DESACTIVE;
-"19
-[v _sensorDisparado `uc ~T0 @X0 1 e ]
-[i _sensorDisparado
--> -> 0 `i `uc
-]
-[; ;head.h: 19: int8 sensorDisparado = 0;
-"20
-[v _diaDisparo `i ~T0 @X0 1 e ]
-[i _diaDisparo
--> 0 `i
-]
-[; ;head.h: 20: int diaDisparo = 0;
-"21
-[v _mesDisparo `i ~T0 @X0 1 e ]
-[i _mesDisparo
--> 0 `i
-]
-[; ;head.h: 21: int mesDisparo = 0;
-"22
-[v _horaDisparo `i ~T0 @X0 1 e ]
-[i _horaDisparo
--> 0 `i
-]
-[; ;head.h: 22: int horaDisparo = 0;
-"23
-[v _minDisparo `i ~T0 @X0 1 e ]
-[i _minDisparo
--> 0 `i
-]
-[; ;head.h: 23: int minDisparo = 0;
-[; ;keyboard.h: 4: int read_keyboard();
-"5 keyboard.c
-[v _clear_keyboard `(v ~T0 @X0 1 ef ]
+"12 leds.c
+[v _select_color `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;keyboard.c: 5: void clear_keyboard(){
-[e :U _clear_keyboard ]
+[; ;leds.c: 12: void select_color(int value){
+[e :U _select_color ]
+[v _value `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;keyboard.c: 6: key = 18;
-"6
-[e = _key -> 18 `i ]
-[; ;keyboard.c: 7: }
-"7
-[e :UE 1035 ]
+[; ;leds.c: 13: if(value == 1 || value == 4 || value ==7){
+"13
+[e $ ! || || == _value -> 1 `i == _value -> 4 `i == _value -> 7 `i 1035  ]
+{
+[; ;leds.c: 14: LATAbits.LATA3 = 0;
+"14
+[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
+"15
 }
-"9
-[v _read_keyboard `(i ~T0 @X0 1 ef ]
+[e :U 1035 ]
+[; ;leds.c: 15: }
+[; ;leds.c: 17: if(value == 2 || value == 5 || value ==8){
+"17
+[e $ ! || || == _value -> 2 `i == _value -> 5 `i == _value -> 8 `i 1036  ]
 {
-[; ;keyboard.c: 9: int read_keyboard(){
-[e :U _read_keyboard ]
-[f ]
-[; ;keyboard.c: 10: LATBbits.LATB1=1;LATBbits.LATB2=0;LATBbits.LATB3=0;LATBbits.LATB4=0;
-"10
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-[; ;keyboard.c: 11: {
-"11
-{
-[; ;keyboard.c: 12: if (PORTBbits.RB5==1){key=1;while(PORTBbits.RB5==1){};}
-"12
-[e $ ! == -> . . _PORTBbits 0 5 `i -> 1 `i 1037  ]
-{
-[e = _key -> 1 `i ]
-[e $U 1038  ]
-[e :U 1039 ]
-{
+[; ;leds.c: 18: LATAbits.LATA5 = 0;
+"18
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+"19
 }
-[e :U 1038 ]
-[e $ == -> . . _PORTBbits 0 5 `i -> 1 `i 1039  ]
-[e :U 1040 ]
+[e :U 1036 ]
+[; ;leds.c: 19: }
+[; ;leds.c: 21: if(value == 3 || value == 6 || value ==9){
+"21
+[e $ ! || || == _value -> 3 `i == _value -> 6 `i == _value -> 9 `i 1037  ]
+{
+[; ;leds.c: 22: LATAbits.LATA7 = 0;
+"22
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+"23
 }
 [e :U 1037 ]
-[; ;keyboard.c: 13: if (PORTBbits.RB7==1){key=2;while(PORTBbits.RB7==1){};}
-"13
-[e $ ! == -> . . _PORTBbits 0 7 `i -> 1 `i 1041  ]
-{
-[e = _key -> 2 `i ]
-[e $U 1042  ]
-[e :U 1043 ]
-{
-}
-[e :U 1042 ]
-[e $ == -> . . _PORTBbits 0 7 `i -> 1 `i 1043  ]
-[e :U 1044 ]
-}
-[e :U 1041 ]
-[; ;keyboard.c: 14: if (PORTBbits.RB6==1){key=3;while(PORTBbits.RB6==1){};}
-"14
-[e $ ! == -> . . _PORTBbits 0 6 `i -> 1 `i 1045  ]
-{
-[e = _key -> 3 `i ]
-[e $U 1046  ]
-[e :U 1047 ]
-{
-}
-[e :U 1046 ]
-[e $ == -> . . _PORTBbits 0 6 `i -> 1 `i 1047  ]
-[e :U 1048 ]
-}
-[e :U 1045 ]
-"16
-}
-[; ;keyboard.c: 16: }
-[; ;keyboard.c: 17: LATBbits.LATB1=0;LATBbits.LATB2=1;LATBbits.LATB3=0;LATBbits.LATB4=0;
-"17
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-[; ;keyboard.c: 18: {
-"18
-{
-[; ;keyboard.c: 19: if (PORTBbits.RB5==1){key=4;while(PORTBbits.RB5==1){};}
-"19
-[e $ ! == -> . . _PORTBbits 0 5 `i -> 1 `i 1049  ]
-{
-[e = _key -> 4 `i ]
-[e $U 1050  ]
-[e :U 1051 ]
-{
-}
-[e :U 1050 ]
-[e $ == -> . . _PORTBbits 0 5 `i -> 1 `i 1051  ]
-[e :U 1052 ]
-}
-[e :U 1049 ]
-[; ;keyboard.c: 20: if (PORTBbits.RB7==1){key=5;while(PORTBbits.RB7==1){};}
-"20
-[e $ ! == -> . . _PORTBbits 0 7 `i -> 1 `i 1053  ]
-{
-[e = _key -> 5 `i ]
-[e $U 1054  ]
-[e :U 1055 ]
-{
-}
-[e :U 1054 ]
-[e $ == -> . . _PORTBbits 0 7 `i -> 1 `i 1055  ]
-[e :U 1056 ]
-}
-[e :U 1053 ]
-[; ;keyboard.c: 21: if (PORTBbits.RB6==1){key=6;while(PORTBbits.RB6==1){};}
-"21
-[e $ ! == -> . . _PORTBbits 0 6 `i -> 1 `i 1057  ]
-{
-[e = _key -> 6 `i ]
-[e $U 1058  ]
-[e :U 1059 ]
-{
-}
-[e :U 1058 ]
-[e $ == -> . . _PORTBbits 0 6 `i -> 1 `i 1059  ]
-[e :U 1060 ]
-}
-[e :U 1057 ]
-"23
-}
-[; ;keyboard.c: 23: }
-[; ;keyboard.c: 24: LATBbits.LATB1=0;LATBbits.LATB2=0;LATBbits.LATB3=1;LATBbits.LATB4=0;
+[; ;leds.c: 23: }
+[; ;leds.c: 24: }
 "24
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-[; ;keyboard.c: 25: {
-"25
-{
-[; ;keyboard.c: 26: if (PORTBbits.RB5==1){key=7;while(PORTBbits.RB5==1){};}
-"26
-[e $ ! == -> . . _PORTBbits 0 5 `i -> 1 `i 1061  ]
-{
-[e = _key -> 7 `i ]
-[e $U 1062  ]
-[e :U 1063 ]
-{
+[e :UE 1034 ]
 }
-[e :U 1062 ]
-[e $ == -> . . _PORTBbits 0 5 `i -> 1 `i 1063  ]
-[e :U 1064 ]
-}
-[e :U 1061 ]
-[; ;keyboard.c: 27: if (PORTBbits.RB7==1){key=8;while(PORTBbits.RB7==1){};}
 "27
-[e $ ! == -> . . _PORTBbits 0 7 `i -> 1 `i 1065  ]
+[v _shutdown `(v ~T0 @X0 1 ef ]
 {
-[e = _key -> 8 `i ]
-[e $U 1066  ]
-[e :U 1067 ]
-{
-}
-[e :U 1066 ]
-[e $ == -> . . _PORTBbits 0 7 `i -> 1 `i 1067  ]
-[e :U 1068 ]
-}
-[e :U 1065 ]
-[; ;keyboard.c: 28: if (PORTBbits.RB6==1){key=9;while(PORTBbits.RB6==1){};}
+[; ;leds.c: 27: void shutdown (){
+[e :U _shutdown ]
+[f ]
+[; ;leds.c: 28: LATAbits.LATA7 = 1;
 "28
-[e $ ! == -> . . _PORTBbits 0 6 `i -> 1 `i 1069  ]
-{
-[e = _key -> 9 `i ]
-[e $U 1070  ]
-[e :U 1071 ]
-{
-}
-[e :U 1070 ]
-[e $ == -> . . _PORTBbits 0 6 `i -> 1 `i 1071  ]
-[e :U 1072 ]
-}
-[e :U 1069 ]
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+[; ;leds.c: 29: LATAbits.LATA5 = 1;
+"29
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+[; ;leds.c: 30: LATAbits.LATA3 = 1;
 "30
-}
-[; ;keyboard.c: 30: }
-[; ;keyboard.c: 31: LATBbits.LATB1=0;LATBbits.LATB2=0;LATBbits.LATB3=0;LATBbits.LATB4=1;
+[e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
+[; ;leds.c: 31: }
 "31
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-[; ;keyboard.c: 32: {
-"32
-{
-[; ;keyboard.c: 33: if (PORTBbits.RB5==1){key=14;while(PORTBbits.RB5==1){};}
-"33
-[e $ ! == -> . . _PORTBbits 0 5 `i -> 1 `i 1073  ]
-{
-[e = _key -> 14 `i ]
-[e $U 1074  ]
-[e :U 1075 ]
-{
+[e :UE 1038 ]
 }
-[e :U 1074 ]
-[e $ == -> . . _PORTBbits 0 5 `i -> 1 `i 1075  ]
-[e :U 1076 ]
-}
-[e :U 1073 ]
-[; ;keyboard.c: 34: if (PORTBbits.RB7==1){key=0;while(PORTBbits.RB7==1){};}
 "34
-[e $ ! == -> . . _PORTBbits 0 7 `i -> 1 `i 1077  ]
+[v _on `(v ~T0 @X0 1 ef2`i`s ]
 {
-[e = _key -> 0 `i ]
-[e $U 1078  ]
-[e :U 1079 ]
-{
-}
-[e :U 1078 ]
-[e $ == -> . . _PORTBbits 0 7 `i -> 1 `i 1079  ]
-[e :U 1080 ]
-}
-[e :U 1077 ]
-[; ;keyboard.c: 35: if (PORTBbits.RB6==1){key=15;while(PORTBbits.RB6==1){};}
+[; ;leds.c: 34: void on(int value ,short intensity){
+[e :U _on ]
+[v _value `i ~T0 @X0 1 r1 ]
+[v _intensity `s ~T0 @X0 1 r2 ]
+[f ]
+[; ;leds.c: 35: intensity = (intensity + 1) * 10;
 "35
-[e $ ! == -> . . _PORTBbits 0 6 `i -> 1 `i 1081  ]
-{
-[e = _key -> 15 `i ]
-[e $U 1082  ]
-[e :U 1083 ]
-{
-}
-[e :U 1082 ]
-[e $ == -> . . _PORTBbits 0 6 `i -> 1 `i 1083  ]
-[e :U 1084 ]
-}
-[e :U 1081 ]
-"37
-}
-[; ;keyboard.c: 37: }
-[; ;keyboard.c: 38: _delay((unsigned long)((1)*(8000000/4000.0)));
+[e = _intensity -> * + -> _intensity `i -> 1 `i -> 10 `i `s ]
+"36
+[v _i `i ~T0 @X0 1 a ]
+[; ;leds.c: 36: int i;
+[; ;leds.c: 38: for(i = 0; i < intensity; i++){
 "38
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;keyboard.c: 41: return key;
+{
+[e = _i -> 0 `i ]
+[e $U 1043  ]
+[e :U 1040 ]
+{
+[; ;leds.c: 39: select_color(value);
+"39
+[e ( _select_color (1 _value ]
+[; ;leds.c: 40: _delay((unsigned long)((500)*(8000000/4000000.0)));
+"40
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "41
-[e ) _key ]
-[e $UE 1036  ]
-[; ;keyboard.c: 42: }
-"42
-[e :UE 1036 ]
+}
+"38
+[e ++ _i -> 1 `i ]
+[e :U 1043 ]
+[e $ < _i -> _intensity `i 1040  ]
+[e :U 1041 ]
+"41
+}
+[; ;leds.c: 41: }
+[; ;leds.c: 43: for(i = intensity; i < 32; i++){
+"43
+{
+[e = _i -> _intensity `i ]
+[e $ < _i -> 32 `i 1044  ]
+[e $U 1045  ]
+[e :U 1044 ]
+{
+[; ;leds.c: 44: shutdown();
+"44
+[e ( _shutdown ..  ]
+[; ;leds.c: 45: _delay((unsigned long)((500)*(8000000/4000000.0)));
+"45
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"46
+}
+"43
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 32 `i 1044  ]
+[e :U 1045 ]
+"46
+}
+[; ;leds.c: 46: }
+[; ;leds.c: 47: }
+"47
+[e :UE 1039 ]
+}
+"50
+[v _on_led `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;leds.c: 50: void on_led(char pressed_key){
+[e :U _on_led ]
+[v _pressed_key `uc ~T0 @X0 1 r1 ]
+[f ]
+"51
+[v _row_detector `f ~T0 @X0 1 a ]
+[; ;leds.c: 51: float row_detector = 3.5;
+[e = _row_detector -> .3.5 `f ]
+"52
+[v _value `i ~T0 @X0 1 a ]
+[; ;leds.c: 52: int value = (int)pressed_key;
+[e = _value -> _pressed_key `i ]
+"53
+[v _intensity `s ~T0 @X0 1 a ]
+[; ;leds.c: 53: short intensity = value / row_detector;
+[e = _intensity -> / -> _value `f _row_detector `s ]
+[; ;leds.c: 54: on(value, intensity);
+"54
+[e ( _on (2 , _value _intensity ]
+[; ;leds.c: 56: }
+"56
+[e :UE 1047 ]
 }

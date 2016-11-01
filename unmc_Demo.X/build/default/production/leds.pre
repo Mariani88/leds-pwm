@@ -1,5 +1,12 @@
 
-# 1 "main.c"
+# 1 "leds.c"
+
+# 15 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
+int key = 18;
+
+# 7 "leds.h"
+void shutdown();
+void on_led(char pressed_key);
 
 # 26 "C:\Program Files\Microchip\xc8\v1.34\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9771,69 +9778,6 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 7 "C:\Program Files\Microchip\xc8\v1.34\include\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 24 "C:\Program Files\Microchip\xc8\v1.34\include\stdio.h"
-extern int errno;
-
-# 55
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 17 "C:\Program Files\Microchip\xc8\v1.34\include\conio.h"
-extern int errno;
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 31
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 100 "C:\Program Files\Microchip\xc8\v1.34\include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 192
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
 # 33 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h"
 typedef unsigned char int8;
 typedef unsigned int int16;
@@ -9878,115 +9822,49 @@ void lcd_putrs(const char *ptr);
 #pragma config WPCFG=OFF
 #pragma config WPDIS=OFF
 
-# 15 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
-int key = 18;
-
-# 17 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
-rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
-
-char segundo_u;
-char segundo_d;
-char minuto_u;
-char minuto_d;
-char hora_u;
-char hora_d;
-char fecha_u;
-char fecha_d;
-char mes_u;
-char mes_d;
-char dia_semana;
-char anio_u;
-char anio_d;
-bit flag=0;
-int i=0;
-int j=0;
-int a=0;
-int b=0;
-int c=0;
-int k=0;
-int anio=15;
-int mes=9;
-int diasem=3;
-int dia=8;
-int hora=18;
-int minuto=30;
-int segundo=0;
-
-# 51
-rtccTime RtccTime;
-rtccTime RtccTimeVal;
-rtccDate RtccDate;
-
-unsigned char buffer2[20];
-
-void DelayFor18TCY(void);
-
-# 63
-void DelayPORXLCD(void);
-
-# 75
-void Write_RTC(void);
-
-# 112
-void Read_RTC(void);
-
-# 14 "head.h"
-typedef enum {
-ACTIVE, DESACTIVE, TRIGGED,
-} state;
-
-state state_alarm = DESACTIVE;
-int8 sensorDisparado = 0;
-int diaDisparo = 0;
-int mesDisparo = 0;
-int horaDisparo = 0;
-int minDisparo = 0;
-
-# 7 "leds.h"
-void shutdown();
-void on_led(char pressed_key);
-
-# 4 "keyboard.h"
-int read_keyboard();
-
-# 33 "main.c"
-void Setup(void)
-{
-OSCTUNEbits.INTSRC=1;
-OSCTUNEbits.PLLEN=0;
-OSCCONbits.IRCF0=1;
-OSCCONbits.IRCF1=1;
-OSCCONbits.IRCF2=1;
-OSCCONbits.SCS0=0;
-OSCCONbits.SCS1=0;
-TRISA = 0b01010111;
-TRISB = 0b11100000;
-TRISC = 0;
-
-
-
-ANCON0=0b11111111;
-
-ANCON1=0b11111111;
-
-
-RTCCFGbits.RTCEN=1;
-RTCCFGbits.RTCWREN=1;
-T1CONbits.T1OSCEN=1;
-
-
-
-
+# 12 "leds.c"
+void select_color(int value){
+if(value == 1 || value == 4 || value ==7){
+LATAbits.LATA3 = 0;
 }
 
-# 67
-int main(void){
-Setup();
+if(value == 2 || value == 5 || value ==8){
+LATAbits.LATA5 = 0;
+}
+
+if(value == 3 || value == 6 || value ==9){
+LATAbits.LATA7 = 0;
+}
+}
+
+
+void shutdown (){
+LATAbits.LATA7 = 1;
+LATAbits.LATA5 = 1;
+LATAbits.LATA3 = 1;
+}
+
+
+void on(int value ,short intensity){
+intensity = (intensity + 1) * 10;
+int i;
+
+for(i = 0; i < intensity; i++){
+select_color(value);
+_delay((unsigned long)((500)*(8000000/4000000.0)));
+}
+
+for(i = intensity; i < 32; i++){
 shutdown();
-while(1){
-
-# 79
-on_led(read_keyboard());
+_delay((unsigned long)((500)*(8000000/4000000.0)));
 }
-return 0;
+}
+
+
+void on_led(char pressed_key){
+float row_detector = 3.5;
+int value = (int)pressed_key;
+short intensity = value / row_detector;
+on(value, intensity);
+
 }

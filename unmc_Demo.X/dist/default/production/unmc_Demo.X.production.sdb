@@ -3,8 +3,8 @@
 [d edition pro ]
 [d chip 18F26J50 ]
 [d frameptr 4065 ]
-"18 C:\leds-tp\unmc_Demo.X\head.h
-[e E8295 . `uc
+"18 C:\leds-pwm\unmc_Demo.X\head.h
+[e E8281 . `uc
 ACTIVE 0
 DESACTIVE 1
 TRIGGED 2
@@ -22,10 +22,8 @@ TRIGGED 2
 [v _lcd_gotoxy lcd_gotoxy `(v  1 e 0 0 ]
 "172
 [v _lcd_putc lcd_putc `(v  1 e 0 0 ]
-"221
-[v _lcd_putrs lcd_putrs `(v  1 e 0 0 ]
-"492 C:\Program Files\Microchip\xc8\v1.34\sources\common\doprnt.c
-[v _sprintf sprintf `(i  1 e 2 0 ]
+"32 C:\Program Files\Microchip\xc8\v1.34\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
 "63 C:\Program Files\Microchip\xc8\v1.34\sources\common\double.c
 [v ___flpack __flpack `(d  1 e 3 0 ]
 "88 C:\Program Files\Microchip\xc8\v1.34\sources\common\fladd.c
@@ -46,12 +44,8 @@ TRIGGED 2
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
 "20 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 3 0 ]
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\isdigit.c
-[v _isdigit isdigit `(b  1 e 0 0 ]
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\lwmod.c
-[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"44 C:\Program Files\Microchip\xc8\v1.34\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
 "15 C:\Program Files\Microchip\xc8\v1.34\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v1.34\sources\common\Umul32.c
@@ -60,18 +54,22 @@ TRIGGED 2
 [v _Delay100TCYx Delay100TCYx `(v  1 e 0 0 ]
 "8 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\d1ktcyx.c
 [v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
-"8 C:\leds-tp\unmc_Demo.X\keyboard.c
-[v _read_keyboard read_keyboard `(uc  1 e 1 0 ]
-"37 C:\leds-tp\unmc_Demo.X\main.c
+"9 C:\leds-pwm\unmc_Demo.X\keyboard.c
+[v _read_keyboard read_keyboard `(i  1 e 2 0 ]
+"12 C:\leds-pwm\unmc_Demo.X\leds.c
+[v _select_color select_color `(v  1 e 0 0 ]
+"27
+[v _shutdown shutdown `(v  1 e 0 0 ]
+"34
+[v _on on `(v  1 e 0 0 ]
+"50
+[v _on_led on_led `(v  1 e 0 0 ]
+"33 C:\leds-pwm\unmc_Demo.X\main.c
 [v _Setup Setup `(v  1 e 0 0 ]
-"72
-[v _on_led on_led `(i  1 e 2 0 ]
-"87
+"67
 [v _main main `(i  1 e 2 0 ]
 "15 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
-[v _key key `uc  1 e 1 0 ]
-"55 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
-[v _buffer2 buffer2 `[20]uc  1 e 20 0 ]
+[v _key key `i  1 e 2 0 ]
 "16 C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c
 [v _LCD_INIT_STRING LCD_INIT_STRING `C[4]uc  1 e 4 0 ]
 [s S120 . 1 `uc 1 RTCPTR0 1 0 :1:0 
@@ -90,124 +88,63 @@ TRIGGED 2
 [v _ANCON0 ANCON0 `VEuc  1 e 1 @3912 ]
 "2577
 [v _ANCON1 ANCON1 `VEuc  1 e 1 @3913 ]
-[s S655 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 . 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-`uc 1 RA7 1 0 :1:7 
+[s S682 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
 ]
-"5344
-[s S664 . 1 `uc 1 AN0 1 0 :1:0 
-`uc 1 AN1 1 0 :1:1 
-`uc 1 AN2 1 0 :1:2 
-`uc 1 AN3 1 0 :1:3 
-`uc 1 . 1 0 :1:4 
-`uc 1 AN4 1 0 :1:5 
-`uc 1 OSC2 1 0 :1:6 
-`uc 1 OSC1 1 0 :1:7 
+"5591
+[s S691 . 1 `uc 1 AN12 1 0 :1:0 
+`uc 1 AN10 1 0 :1:1 
+`uc 1 AN8 1 0 :1:2 
+`uc 1 AN9 1 0 :1:3 
+`uc 1 . 1 0 :2:4 
+`uc 1 KBI2 1 0 :1:6 
+`uc 1 KBI3 1 0 :1:7 
 ]
-[s S673 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 NOT_SS1 1 0 :1:5 
+[s S699 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 CTEDG1 1 0 :1:2 
+`uc 1 CTEDG2 1 0 :1:3 
+`uc 1 KBI0 1 0 :1:4 
+`uc 1 KBI1 1 0 :1:5 
+`uc 1 PGC 1 0 :1:6 
+`uc 1 PGD 1 0 :1:7 
 ]
-[s S676 . 1 `uc 1 C1INA 1 0 :1:0 
-`uc 1 C2INA 1 0 :1:1 
-`uc 1 VREF_MINUS 1 0 :1:2 
-`uc 1 VREF_PLUS 1 0 :1:3 
-`uc 1 . 1 0 :1:4 
-`uc 1 nSS1 1 0 :1:5 
-`uc 1 CLKO 1 0 :1:6 
-`uc 1 CLKI 1 0 :1:7 
+[s S708 . 1 `uc 1 RP3 1 0 :1:0 
+`uc 1 RTCC 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 SCK1 1 0 :1:4 
+`uc 1 SDI1 1 0 :1:5 
+`uc 1 RP9 1 0 :1:6 
+`uc 1 RP10 1 0 :1:7 
 ]
-[s S685 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 CVREF_MINUS 1 0 :1:2 
-`uc 1 C1INB 1 0 :1:3 
-`uc 1 . 1 0 :1:4 
-`uc 1 HLVDIN 1 0 :1:5 
+[s S716 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RP4 1 0 :1:1 
+`uc 1 VMO 1 0 :1:2 
+`uc 1 VPO 1 0 :1:3 
+`uc 1 SCL1 1 0 :1:4 
+`uc 1 SDA1 1 0 :1:5 
 ]
-[s S691 . 1 `uc 1 RP0 1 0 :1:0 
-`uc 1 RP1 1 0 :1:1 
-`uc 1 C2INB 1 0 :1:2 
-`uc 1 . 1 0 :2:3 
-`uc 1 RCV 1 0 :1:5 
+[s S723 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 REFO 1 0 :1:2 
+`uc 1 RP6 1 0 :1:3 
+`uc 1 RP7 1 0 :1:4 
+`uc 1 RP8 1 0 :1:5 
 ]
-[s S697 . 1 `uc 1 ULPWU 1 0 :1:0 
-`uc 1 . 1 0 :4:1 
-`uc 1 RP2 1 0 :1:5 
+[s S729 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RP5 1 0 :1:2 
 ]
-[s S701 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 LVDIN 1 0 :1:5 
+[s S732 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[s S704 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 RA4 1 0 :1:4 
-]
-[s S707 . 1 `uc 1 . 1 0 :7:0 
-`uc 1 RJPU 1 0 :1:7 
-]
-[s S710 . 1 `uc 1 ULPWUIN 1 0 :1:0 
-]
-[u S712 . 1 `S655 1 . 1 0 `S664 1 . 1 0 `S673 1 . 1 0 `S676 1 . 1 0 `S685 1 . 1 0 `S691 1 . 1 0 `S697 1 . 1 0 `S701 1 . 1 0 `S704 1 . 1 0 `S707 1 . 1 0 `S710 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES712  1 e 1 @3968 ]
-[s S789 . 1 `uc 1 RC0 1 0 :1:0 
-`uc 1 RC1 1 0 :1:1 
-`uc 1 RC2 1 0 :1:2 
-`uc 1 . 1 0 :1:3 
-`uc 1 RC4 1 0 :1:4 
-`uc 1 RC5 1 0 :1:5 
-`uc 1 RC6 1 0 :1:6 
-`uc 1 RC7 1 0 :1:7 
-]
-"5857
-[s S798 . 1 `uc 1 T1OSO 1 0 :1:0 
-`uc 1 T1OSI 1 0 :1:1 
-`uc 1 AN11 1 0 :1:2 
-`uc 1 . 1 0 :1:3 
-`uc 1 D_MINUS 1 0 :1:4 
-`uc 1 D_PLUS 1 0 :1:5 
-]
-[s S805 . 1 `uc 1 . 1 0 :1:0 
-`uc 1 NOT_UOE 1 0 :1:1 
-]
-[s S808 . 1 `uc 1 T1CK 1 0 :1:0 
-`uc 1 nUOE 1 0 :1:1 
-`uc 1 CTPLS 1 0 :1:2 
-`uc 1 . 1 0 :1:3 
-`uc 1 VM 1 0 :1:4 
-`uc 1 VP 1 0 :1:5 
-`uc 1 TX1 1 0 :1:6 
-`uc 1 RX1 1 0 :1:7 
-]
-[s S817 . 1 `uc 1 RP11 1 0 :1:0 
-`uc 1 RP12 1 0 :1:1 
-`uc 1 RP13 1 0 :1:2 
-`uc 1 . 1 0 :3:3 
-`uc 1 CK1 1 0 :1:6 
-`uc 1 DT1 1 0 :1:7 
-]
-[s S824 . 1 `uc 1 . 1 0 :6:0 
-`uc 1 RP17 1 0 :1:6 
-`uc 1 SDO1 1 0 :1:7 
-]
-[s S828 . 1 `uc 1 . 1 0 :7:0 
-`uc 1 RP18 1 0 :1:7 
-]
-[s S831 . 1 `uc 1 . 1 0 :1:0 
-`uc 1 CCP2 1 0 :1:1 
-]
-[s S834 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 PA1 1 0 :1:2 
-]
-[s S837 . 1 `uc 1 . 1 0 :1:0 
-`uc 1 PA2 1 0 :1:1 
-]
-[s S840 . 1 `uc 1 . 1 0 :3:0 
-`uc 1 RC3 1 0 :1:3 
-]
-[u S843 . 1 `S789 1 . 1 0 `S798 1 . 1 0 `S805 1 . 1 0 `S808 1 . 1 0 `S817 1 . 1 0 `S824 1 . 1 0 `S828 1 . 1 0 `S831 1 . 1 0 `S834 1 . 1 0 `S837 1 . 1 0 `S840 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES843  1 e 1 @3970 ]
-[s S580 . 1 `uc 1 LATA0 1 0 :1:0 
+[u S735 . 1 `S682 1 . 1 0 `S691 1 . 1 0 `S699 1 . 1 0 `S708 1 . 1 0 `S716 1 . 1 0 `S723 1 . 1 0 `S729 1 . 1 0 `S732 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES735  1 e 1 @3969 ]
+[s S497 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -217,32 +154,32 @@ TRIGGED 2
 `uc 1 LATA7 1 0 :1:7 
 ]
 "6274
-[s S589 . 1 `uc 1 LA0 1 0 :1:0 
+[s S506 . 1 `uc 1 LA0 1 0 :1:0 
 ]
-[s S591 . 1 `uc 1 . 1 0 :1:0 
+[s S508 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 ]
-[s S594 . 1 `uc 1 . 1 0 :2:0 
+[s S511 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LA2 1 0 :1:2 
 ]
-[s S597 . 1 `uc 1 . 1 0 :3:0 
+[s S514 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 LA3 1 0 :1:3 
 ]
-[s S600 . 1 `uc 1 . 1 0 :4:0 
+[s S517 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LA4 1 0 :1:4 
 ]
-[s S603 . 1 `uc 1 . 1 0 :5:0 
+[s S520 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LA5 1 0 :1:5 
 ]
-[s S606 . 1 `uc 1 . 1 0 :6:0 
+[s S523 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 LA6 1 0 :1:6 
 ]
-[s S609 . 1 `uc 1 . 1 0 :7:0 
+[s S526 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S612 . 1 `S580 1 . 1 0 `S589 1 . 1 0 `S591 1 . 1 0 `S594 1 . 1 0 `S597 1 . 1 0 `S600 1 . 1 0 `S603 1 . 1 0 `S606 1 . 1 0 `S609 1 . 1 0 ]
-[v _LATAbits LATAbits `VES612  1 e 1 @3977 ]
-[s S204 . 1 `uc 1 LATB0 1 0 :1:0 
+[u S529 . 1 `S497 1 . 1 0 `S506 1 . 1 0 `S508 1 . 1 0 `S511 1 . 1 0 `S514 1 . 1 0 `S517 1 . 1 0 `S520 1 . 1 0 `S523 1 . 1 0 `S526 1 . 1 0 ]
+[v _LATAbits LATAbits `VES529  1 e 1 @3977 ]
+[s S344 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -252,36 +189,36 @@ TRIGGED 2
 `uc 1 LATB7 1 0 :1:7 
 ]
 "6401
-[s S213 . 1 `uc 1 LB0 1 0 :1:0 
+[s S353 . 1 `uc 1 LB0 1 0 :1:0 
 ]
-[s S215 . 1 `uc 1 . 1 0 :1:0 
+[s S355 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 ]
-[s S218 . 1 `uc 1 . 1 0 :2:0 
+[s S358 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LB2 1 0 :1:2 
 ]
-[s S221 . 1 `uc 1 . 1 0 :3:0 
+[s S361 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 LB3 1 0 :1:3 
 ]
-[s S224 . 1 `uc 1 . 1 0 :4:0 
+[s S364 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LB4 1 0 :1:4 
 ]
-[s S227 . 1 `uc 1 . 1 0 :5:0 
+[s S367 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LB5 1 0 :1:5 
 ]
-[s S230 . 1 `uc 1 . 1 0 :6:0 
+[s S370 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 LB6 1 0 :1:6 
 ]
-[s S233 . 1 `uc 1 . 1 0 :7:0 
+[s S373 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S236 . 1 `S204 1 . 1 0 `S213 1 . 1 0 `S215 1 . 1 0 `S218 1 . 1 0 `S221 1 . 1 0 `S224 1 . 1 0 `S227 1 . 1 0 `S230 1 . 1 0 `S233 1 . 1 0 ]
-[v _LATBbits LATBbits `VES236  1 e 1 @3978 ]
+[u S376 . 1 `S344 1 . 1 0 `S353 1 . 1 0 `S355 1 . 1 0 `S358 1 . 1 0 `S361 1 . 1 0 `S364 1 . 1 0 `S367 1 . 1 0 `S370 1 . 1 0 `S373 1 . 1 0 ]
+[v _LATBbits LATBbits `VES376  1 e 1 @3978 ]
 "6794
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "6850
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
-[s S481 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S428 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -291,8 +228,8 @@ TRIGGED 2
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "6867
-[u S490 . 1 `S481 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES490  1 e 1 @3987 ]
+[u S437 . 1 `S428 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES437  1 e 1 @3987 ]
 "6911
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 [s S59 . 1 `uc 1 TUN 1 0 :6:0 
@@ -356,46 +293,51 @@ TRIGGED 2
 ]
 [u S98 . 1 `S85 1 . 1 0 `S91 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES98  1 e 1 @4051 ]
-"354 C:\Program Files\Microchip\xc8\v1.34\sources\common\doprnt.c
-[v _dpowers dpowers `C[5]ui  1 s 10 dpowers ]
-"87 C:\leds-tp\unmc_Demo.X\main.c
+"67 C:\leds-pwm\unmc_Demo.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"118
+"82
 } 0
-"8 C:\leds-tp\unmc_Demo.X\keyboard.c
-[v _read_keyboard read_keyboard `(uc  1 e 1 0 ]
+"9 C:\leds-pwm\unmc_Demo.X\keyboard.c
+[v _read_keyboard read_keyboard `(i  1 e 2 0 ]
 {
-"41
+"42
 } 0
-"492 C:\Program Files\Microchip\xc8\v1.34\sources\common\doprnt.c
-[v _sprintf sprintf `(i  1 e 2 0 ]
+"50 C:\leds-pwm\unmc_Demo.X\leds.c
+[v _on_led on_led `(v  1 e 0 0 ]
 {
-"501
-[v sprintf@width width `i  1 a 2 28 ]
-"528
-[v sprintf@val val `ui  1 a 2 25 ]
-"494
-[v sprintf@ap ap `[1]*.39v  1 a 2 22 ]
-"499
-[v sprintf@c c `c  1 a 1 30 ]
-"506
-[v sprintf@prec prec `c  1 a 1 27 ]
-"508
-[v sprintf@flag flag `uc  1 a 1 24 ]
-"492
-[v sprintf@sp sp `*.39uc  1 p 2 12 ]
-[v sprintf@f f `*.25Cuc  1 p 2 14 ]
-"1541
+[v on_led@pressed_key pressed_key `uc  1 a 1 wreg ]
+"51
+[v on_led@row_detector row_detector `f  1 a 3 42 ]
+"52
+[v on_led@value value `i  1 a 2 48 ]
+"53
+[v on_led@intensity intensity `s  1 a 2 45 ]
+"50
+[v on_led@pressed_key pressed_key `uc  1 a 1 wreg ]
+[v on_led@pressed_key pressed_key `uc  1 a 1 47 ]
+"56
 } 0
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\isdigit.c
-[v _isdigit isdigit `(b  1 e 0 0 ]
+"34
+[v _on on `(v  1 e 0 0 ]
 {
-[v isdigit@c c `uc  1 a 1 wreg ]
-[v isdigit@c c `uc  1 a 1 wreg ]
-"14
-[v isdigit@c c `uc  1 a 1 2 ]
-"15
+"36
+[v on@i i `i  1 a 2 11 ]
+"34
+[v on@value value `i  1 p 2 6 ]
+[v on@intensity intensity `s  1 p 2 8 ]
+"47
+} 0
+"27
+[v _shutdown shutdown `(v  1 e 0 0 ]
+{
+"31
+} 0
+"12
+[v _select_color select_color `(v  1 e 0 0 ]
+{
+[v select_color@value value `i  1 p 2 0 ]
+"24
 } 0
 "15 C:\Program Files\Microchip\xc8\v1.34\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -407,96 +349,51 @@ TRIGGED 2
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\lwmod.c
-[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"44 C:\Program Files\Microchip\xc8\v1.34\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
 {
-"11
-[v ___lwmod@counter counter `uc  1 a 1 11 ]
-"8
-[v ___lwmod@dividend dividend `ui  1 p 2 7 ]
-[v ___lwmod@divisor divisor `ui  1 p 2 9 ]
-"26
+"47
+[v ___fttol@lval lval `ul  1 a 4 37 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 41 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 36 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 27 ]
+"73
 } 0
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"54 C:\Program Files\Microchip\xc8\v1.34\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
 {
-"11
-[v ___lwdiv@quotient quotient `ui  1 a 2 4 ]
-"12
-[v ___lwdiv@counter counter `uc  1 a 1 6 ]
-"8
-[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
-[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
-"31
-} 0
-"221 C:/Archivos de programa/Unimic/unmc_01/sources/unmc_lcd_216.c
-[v _lcd_putrs lcd_putrs `(v  1 e 0 0 ]
-{
-[v lcd_putrs@ptr ptr `*.39Cuc  1 p 2 8 ]
-"226
-} 0
-"172
-[v _lcd_putc lcd_putc `(v  1 e 0 0 ]
-{
-[v lcd_putc@c c `uc  1 a 1 wreg ]
-[v lcd_putc@c c `uc  1 a 1 wreg ]
-[v lcd_putc@c c `uc  1 a 1 7 ]
-"187
-} 0
-"158
-[v _lcd_gotoxy lcd_gotoxy `(v  1 e 0 0 ]
-{
-[v lcd_gotoxy@x x `uc  1 a 1 wreg ]
-"159
-[v lcd_gotoxy@address address `uc  1 a 1 6 ]
-"158
-[v lcd_gotoxy@x x `uc  1 a 1 wreg ]
-[v lcd_gotoxy@y y `uc  1 p 1 4 ]
-"161
-[v lcd_gotoxy@x x `uc  1 a 1 5 ]
-"168
-} 0
+"60
+[v ___ftdiv@f3 f3 `f  1 a 3 22 ]
+"59
+[v ___ftdiv@sign sign `uc  1 a 1 26 ]
+[v ___ftdiv@exp exp `uc  1 a 1 25 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 21 ]
+"54
+[v ___ftdiv@f1 f1 `f  1 p 3 12 ]
+[v ___ftdiv@f2 f2 `f  1 p 3 15 ]
 "86
-[v _lcd_send_byte lcd_send_byte `(v  1 e 0 0 ]
-{
-[v lcd_send_byte@address address `uc  1 a 1 wreg ]
-[v lcd_send_byte@address address `uc  1 a 1 wreg ]
-[v lcd_send_byte@n n `uc  1 p 1 2 ]
-"88
-[v lcd_send_byte@address address `uc  1 a 1 3 ]
-"115
 } 0
-"25
-[v _lcd_send_nibble lcd_send_nibble `(v  1 e 0 0 ]
+"32 C:\Program Files\Microchip\xc8\v1.34\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
 {
-[v lcd_send_nibble@nibble nibble `uc  1 a 1 wreg ]
-[v lcd_send_nibble@nibble nibble `uc  1 a 1 wreg ]
-"27
-[v lcd_send_nibble@nibble nibble `uc  1 a 1 1 ]
-"36
+"34
+[v ___awtoft@sign sign `uc  1 a 1 11 ]
+"32
+[v ___awtoft@c c `i  1 p 2 8 ]
+"42
 } 0
-"8 C:\Program Files\Microchip\xc8\v1.34\sources\pic18\d100tcyx.c
-[v _Delay100TCYx Delay100TCYx `(v  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v1.34\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
 {
-[v Delay100TCYx@unit unit `uc  1 a 1 wreg ]
-[v Delay100TCYx@unit unit `uc  1 a 1 wreg ]
-[v Delay100TCYx@unit unit `uc  1 a 1 0 ]
-"13
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
+"86
 } 0
-"72 C:\leds-tp\unmc_Demo.X\main.c
-[v _on_led on_led `(i  1 e 2 0 ]
-{
-[v on_led@key key `uc  1 a 1 wreg ]
-[v on_led@i i `i  1 a 2 5 ]
-"74
-[v on_led@intensity intensity `s  1 a 2 3 ]
-"72
-[v on_led@key key `uc  1 a 1 wreg ]
-[v on_led@key key `uc  1 a 1 2 ]
-"85
-} 0
-"37
+"33 C:\leds-pwm\unmc_Demo.X\main.c
 [v _Setup Setup `(v  1 e 0 0 ]
 {
-"64
+"60
 } 0

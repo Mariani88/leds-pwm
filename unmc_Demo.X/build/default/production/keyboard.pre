@@ -9879,7 +9879,7 @@ void lcd_putrs(const char *ptr);
 #pragma config WPDIS=OFF
 
 # 15 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h"
-char key = 18;
+int key = 18;
 
 # 17 "C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h"
 rtccTimeDate RtccTimeDate ,RtccAlrmTimeDate, Rtcc_read_TimeDate ;
@@ -9942,44 +9942,44 @@ int mesDisparo = 0;
 int horaDisparo = 0;
 int minDisparo = 0;
 
-# 5 "keyboard.h"
-char read_keyboard();
+# 4 "keyboard.h"
+int read_keyboard();
 
-# 4 "keyboard.c"
+# 5 "keyboard.c"
 void clear_keyboard(){
 key = 18;
 }
 
-char read_keyboard(){
-LATAbits.LATA0=1;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=0;
+int read_keyboard(){
+LATBbits.LATB1=1;LATBbits.LATB2=0;LATBbits.LATB3=0;LATBbits.LATB4=0;
 {
-if (PORTAbits.RA5==1){key=1;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTAbits.RA5==1){};}
-if (PORTAbits.RA7==1){key=2;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTAbits.RA7==1){};}
-if (PORTAbits.RA6==1){key=3;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTAbits.RA6==1){};}
-if (PORTCbits.RC2==1){key=11; while(PORTCbits.RC2==1){};}
-}
-LATAbits.LATA0=0;LATAbits.LATA1=1;LATAbits.LATA2=0;LATAbits.LATA3=0;
-{
-if (PORTAbits.RA5==1){key=4;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTAbits.RA5==1){};}
-if (PORTAbits.RA7==1){key=5;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTAbits.RA7==1){};}
-if (PORTAbits.RA6==1){key=6;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTAbits.RA6==1){};}
-if (PORTCbits.RC2==1){key=12; while(PORTCbits.RC2==1){};}
-}
-LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=1;LATAbits.LATA3=0;
-{
-if (PORTAbits.RA5==1){key=7;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTAbits.RA5==1){};}
-if (PORTAbits.RA7==1){key=8;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTAbits.RA7==1){};}
-if (PORTAbits.RA6==1){key=9;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTAbits.RA6==1){};}
-if (PORTCbits.RC2==1){key=13; while(PORTCbits.RC2==1){};}
-}
-LATAbits.LATA0=0;LATAbits.LATA1=0;LATAbits.LATA2=0;LATAbits.LATA3=1;
-{
-if (PORTAbits.RA5==1){key=14; while(PORTAbits.RA5==1){};}
-if (PORTAbits.RA7==1){key=0;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTAbits.RA7==1){};}
-if (PORTAbits.RA6==1){key=15; while(PORTAbits.RA6==1){};}
-if (PORTCbits.RC2==1){key=16; while(PORTCbits.RC2==1){};}
-}
+if (PORTBbits.RB5==1){key=1;while(PORTBbits.RB5==1){};}
+if (PORTBbits.RB7==1){key=2;while(PORTBbits.RB7==1){};}
+if (PORTBbits.RB6==1){key=3;while(PORTBbits.RB6==1){};}
 
+}
+LATBbits.LATB1=0;LATBbits.LATB2=1;LATBbits.LATB3=0;LATBbits.LATB4=0;
+{
+if (PORTBbits.RB5==1){key=4;while(PORTBbits.RB5==1){};}
+if (PORTBbits.RB7==1){key=5;while(PORTBbits.RB7==1){};}
+if (PORTBbits.RB6==1){key=6;while(PORTBbits.RB6==1){};}
+
+}
+LATBbits.LATB1=0;LATBbits.LATB2=0;LATBbits.LATB3=1;LATBbits.LATB4=0;
+{
+if (PORTBbits.RB5==1){key=7;while(PORTBbits.RB5==1){};}
+if (PORTBbits.RB7==1){key=8;while(PORTBbits.RB7==1){};}
+if (PORTBbits.RB6==1){key=9;while(PORTBbits.RB6==1){};}
+
+}
+LATBbits.LATB1=0;LATBbits.LATB2=0;LATBbits.LATB3=0;LATBbits.LATB4=1;
+{
+if (PORTBbits.RB5==1){key=14;while(PORTBbits.RB5==1){};}
+if (PORTBbits.RB7==1){key=0;while(PORTBbits.RB7==1){};}
+if (PORTBbits.RB6==1){key=15;while(PORTBbits.RB6==1){};}
+
+}
+_delay((unsigned long)((1)*(8000000/4000.0)));
 
 
 return key;

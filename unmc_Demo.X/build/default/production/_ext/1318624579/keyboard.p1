@@ -17,7 +17,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "126
 [u S1025 `S1026 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
 [n S1025 . f b w l ]
-"18 head.h
+"18 C:/leds-tp/unmc_Demo.X/head.h
 [c E8281 0 1 2 .. ]
 [n E8281 . ACTIVE DESACTIVE TRIGGED  ]
 "6359 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
@@ -81,10 +81,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S406 . . . . . . . . . ]
 "5591
 [v _PORTBbits `VS406 ~T0 @X0 0 e@3969 ]
-[v F8145 `(v ~T0 @X0 1 tf1`ul ]
-"161 C:\Program Files\Microchip\xc8\v1.34\include\pic18.h
-[v __delay `JF8145 ~T0 @X0 0 e ]
-[p i __delay ]
+"206 C:\Program Files\Microchip\xc8\v1.34\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"109 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_lcd_216.h
+[v _lcd_putrs `(v ~T0 @X0 0 ef1`*Cuc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
@@ -7705,11 +7705,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "36
 [p x WPDIS=OFF ]
 "15 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
-[v _key `i ~T0 @X0 1 e ]
+[v _key `uc ~T0 @X0 1 e ]
 [i _key
--> 18 `i
+-> -> 18 `i `uc
 ]
-[; ;headers\unmc_inout_02.h: 15: int key = 18;
+[; ;headers\unmc_inout_02.h: 15: char key = 18;
 "17 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
 [v _RtccTimeDate `S1027 ~T0 @X0 1 e ]
 [v _RtccAlrmTimeDate `S1027 ~T0 @X0 1 e ]
@@ -7857,7 +7857,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;head.h: 14: typedef enum {
 [; ;head.h: 15: ACTIVE, DESACTIVE, TRIGGED,
 [; ;head.h: 16: } state;
-"18 head.h
+"18 C:/leds-tp/unmc_Demo.X/head.h
 [v _state_alarm `E8281 ~T0 @X0 1 e ]
 [i _state_alarm
 . `E8281 1
@@ -7893,40 +7893,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;head.h: 23: int minDisparo = 0;
-[; ;keyboard.h: 4: int read_keyboard();
-"5 keyboard.c
+[; ;keyboard.h: 5: char read_keyboard();
+"4 C:/leds-tp/unmc_Demo.X/keyboard.c
 [v _clear_keyboard `(v ~T0 @X0 1 ef ]
 {
-[; ;keyboard.c: 5: void clear_keyboard(){
+[; ;keyboard.c: 4: void clear_keyboard(){
 [e :U _clear_keyboard ]
 [f ]
-[; ;keyboard.c: 6: key = 18;
+[; ;keyboard.c: 5: key = 18;
+"5
+[e = _key -> -> 18 `i `uc ]
+[; ;keyboard.c: 6: }
 "6
-[e = _key -> 18 `i ]
-[; ;keyboard.c: 7: }
-"7
 [e :UE 1035 ]
 }
-"9
-[v _read_keyboard `(i ~T0 @X0 1 ef ]
+"8
+[v _read_keyboard `(uc ~T0 @X0 1 ef ]
 {
-[; ;keyboard.c: 9: int read_keyboard(){
+[; ;keyboard.c: 8: char read_keyboard(){
 [e :U _read_keyboard ]
 [f ]
-[; ;keyboard.c: 10: LATBbits.LATB1=1;LATBbits.LATB2=0;LATBbits.LATB3=0;LATBbits.LATB4=0;
-"10
+[; ;keyboard.c: 9: LATBbits.LATB1=1;LATBbits.LATB2=0;LATBbits.LATB3=0;LATBbits.LATB4=0;
+"9
 [e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 [e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-[; ;keyboard.c: 11: {
-"11
+[; ;keyboard.c: 10: {
+"10
 {
-[; ;keyboard.c: 12: if (PORTBbits.RB5==1){key=1;while(PORTBbits.RB5==1){};}
-"12
+[; ;keyboard.c: 11: if (PORTBbits.RB5==1){key=1;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB5==1){};}
+"11
 [e $ ! == -> . . _PORTBbits 0 5 `i -> 1 `i 1037  ]
 {
-[e = _key -> 1 `i ]
+[e = _key -> -> 1 `i `uc ]
+[e ( _sprintf (1 , (. , &U _buffer2 :s 1C -> _key `i ]
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
 [e $U 1038  ]
 [e :U 1039 ]
 {
@@ -7936,11 +7938,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1040 ]
 }
 [e :U 1037 ]
-[; ;keyboard.c: 13: if (PORTBbits.RB7==1){key=2;while(PORTBbits.RB7==1){};}
-"13
+[; ;keyboard.c: 12: if (PORTBbits.RB7==1){key=2;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB7==1){};}
+"12
 [e $ ! == -> . . _PORTBbits 0 7 `i -> 1 `i 1041  ]
 {
-[e = _key -> 2 `i ]
+[e = _key -> -> 2 `i `uc ]
+[e ( _sprintf (1 , (. , &U _buffer2 :s 2C -> _key `i ]
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
 [e $U 1042  ]
 [e :U 1043 ]
 {
@@ -7950,11 +7954,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1044 ]
 }
 [e :U 1041 ]
-[; ;keyboard.c: 14: if (PORTBbits.RB6==1){key=3;while(PORTBbits.RB6==1){};}
-"14
+[; ;keyboard.c: 13: if (PORTBbits.RB6==1){key=3;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB6==1){};}
+"13
 [e $ ! == -> . . _PORTBbits 0 6 `i -> 1 `i 1045  ]
 {
-[e = _key -> 3 `i ]
+[e = _key -> -> 3 `i `uc ]
+[e ( _sprintf (1 , (. , &U _buffer2 :s 3C -> _key `i ]
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
 [e $U 1046  ]
 [e :U 1047 ]
 {
@@ -7964,23 +7970,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1048 ]
 }
 [e :U 1045 ]
-"16
+"15
 }
-[; ;keyboard.c: 16: }
-[; ;keyboard.c: 17: LATBbits.LATB1=0;LATBbits.LATB2=1;LATBbits.LATB3=0;LATBbits.LATB4=0;
-"17
+[; ;keyboard.c: 15: }
+[; ;keyboard.c: 16: LATBbits.LATB1=0;LATBbits.LATB2=1;LATBbits.LATB3=0;LATBbits.LATB4=0;
+"16
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-[; ;keyboard.c: 18: {
-"18
+[; ;keyboard.c: 17: {
+"17
 {
-[; ;keyboard.c: 19: if (PORTBbits.RB5==1){key=4;while(PORTBbits.RB5==1){};}
-"19
+[; ;keyboard.c: 18: if (PORTBbits.RB5==1){key=4;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB5==1){};}
+"18
 [e $ ! == -> . . _PORTBbits 0 5 `i -> 1 `i 1049  ]
 {
-[e = _key -> 4 `i ]
+[e = _key -> -> 4 `i `uc ]
+[e ( _sprintf (1 , (. , &U _buffer2 :s 4C -> _key `i ]
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
 [e $U 1050  ]
 [e :U 1051 ]
 {
@@ -7990,11 +7998,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1052 ]
 }
 [e :U 1049 ]
-[; ;keyboard.c: 20: if (PORTBbits.RB7==1){key=5;while(PORTBbits.RB7==1){};}
-"20
+[; ;keyboard.c: 19: if (PORTBbits.RB7==1){key=5;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB7==1){};}
+"19
 [e $ ! == -> . . _PORTBbits 0 7 `i -> 1 `i 1053  ]
 {
-[e = _key -> 5 `i ]
+[e = _key -> -> 5 `i `uc ]
+[e ( _sprintf (1 , (. , &U _buffer2 :s 5C -> _key `i ]
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
 [e $U 1054  ]
 [e :U 1055 ]
 {
@@ -8004,11 +8014,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1056 ]
 }
 [e :U 1053 ]
-[; ;keyboard.c: 21: if (PORTBbits.RB6==1){key=6;while(PORTBbits.RB6==1){};}
-"21
+[; ;keyboard.c: 20: if (PORTBbits.RB6==1){key=6;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB6==1){};}
+"20
 [e $ ! == -> . . _PORTBbits 0 6 `i -> 1 `i 1057  ]
 {
-[e = _key -> 6 `i ]
+[e = _key -> -> 6 `i `uc ]
+[e ( _sprintf (1 , (. , &U _buffer2 :s 6C -> _key `i ]
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
 [e $U 1058  ]
 [e :U 1059 ]
 {
@@ -8018,23 +8030,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1060 ]
 }
 [e :U 1057 ]
-"23
+"22
 }
-[; ;keyboard.c: 23: }
-[; ;keyboard.c: 24: LATBbits.LATB1=0;LATBbits.LATB2=0;LATBbits.LATB3=1;LATBbits.LATB4=0;
-"24
+[; ;keyboard.c: 22: }
+[; ;keyboard.c: 23: LATBbits.LATB1=0;LATBbits.LATB2=0;LATBbits.LATB3=1;LATBbits.LATB4=0;
+"23
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-[; ;keyboard.c: 25: {
-"25
+[; ;keyboard.c: 24: {
+"24
 {
-[; ;keyboard.c: 26: if (PORTBbits.RB5==1){key=7;while(PORTBbits.RB5==1){};}
-"26
+[; ;keyboard.c: 25: if (PORTBbits.RB5==1){key=7;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB5==1){};}
+"25
 [e $ ! == -> . . _PORTBbits 0 5 `i -> 1 `i 1061  ]
 {
-[e = _key -> 7 `i ]
+[e = _key -> -> 7 `i `uc ]
+[e ( _sprintf (1 , (. , &U _buffer2 :s 7C -> _key `i ]
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
 [e $U 1062  ]
 [e :U 1063 ]
 {
@@ -8044,11 +8058,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1064 ]
 }
 [e :U 1061 ]
-[; ;keyboard.c: 27: if (PORTBbits.RB7==1){key=8;while(PORTBbits.RB7==1){};}
-"27
+[; ;keyboard.c: 26: if (PORTBbits.RB7==1){key=8;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB7==1){};}
+"26
 [e $ ! == -> . . _PORTBbits 0 7 `i -> 1 `i 1065  ]
 {
-[e = _key -> 8 `i ]
+[e = _key -> -> 8 `i `uc ]
+[e ( _sprintf (1 , (. , &U _buffer2 :s 8C -> _key `i ]
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
 [e $U 1066  ]
 [e :U 1067 ]
 {
@@ -8058,11 +8074,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1068 ]
 }
 [e :U 1065 ]
-[; ;keyboard.c: 28: if (PORTBbits.RB6==1){key=9;while(PORTBbits.RB6==1){};}
-"28
+[; ;keyboard.c: 27: if (PORTBbits.RB6==1){key=9;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB6==1){};}
+"27
 [e $ ! == -> . . _PORTBbits 0 6 `i -> 1 `i 1069  ]
 {
-[e = _key -> 9 `i ]
+[e = _key -> -> 9 `i `uc ]
+[e ( _sprintf (1 , (. , &U _buffer2 :s 9C -> _key `i ]
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
 [e $U 1070  ]
 [e :U 1071 ]
 {
@@ -8072,23 +8090,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1072 ]
 }
 [e :U 1069 ]
-"30
+"29
 }
-[; ;keyboard.c: 30: }
-[; ;keyboard.c: 31: LATBbits.LATB1=0;LATBbits.LATB2=0;LATBbits.LATB3=0;LATBbits.LATB4=1;
-"31
+[; ;keyboard.c: 29: }
+[; ;keyboard.c: 30: LATBbits.LATB1=0;LATBbits.LATB2=0;LATBbits.LATB3=0;LATBbits.LATB4=1;
+"30
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-[; ;keyboard.c: 32: {
-"32
+[; ;keyboard.c: 31: {
+"31
 {
-[; ;keyboard.c: 33: if (PORTBbits.RB5==1){key=14;while(PORTBbits.RB5==1){};}
-"33
+[; ;keyboard.c: 32: if (PORTBbits.RB5==1){key=14; while(PORTBbits.RB5==1){};}
+"32
 [e $ ! == -> . . _PORTBbits 0 5 `i -> 1 `i 1073  ]
 {
-[e = _key -> 14 `i ]
+[e = _key -> -> 14 `i `uc ]
 [e $U 1074  ]
 [e :U 1075 ]
 {
@@ -8098,11 +8116,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1076 ]
 }
 [e :U 1073 ]
-[; ;keyboard.c: 34: if (PORTBbits.RB7==1){key=0;while(PORTBbits.RB7==1){};}
-"34
+[; ;keyboard.c: 33: if (PORTBbits.RB7==1){key=0;sprintf(buffer2,"%01u",key);lcd_putrs(buffer2);while(PORTBbits.RB7==1){};}
+"33
 [e $ ! == -> . . _PORTBbits 0 7 `i -> 1 `i 1077  ]
 {
-[e = _key -> 0 `i ]
+[e = _key -> -> 0 `i `uc ]
+[e ( _sprintf (1 , (. , &U _buffer2 :s 10C -> _key `i ]
+[e ( _lcd_putrs (1 -> &U _buffer2 `*Cuc ]
 [e $U 1078  ]
 [e :U 1079 ]
 {
@@ -8112,11 +8132,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1080 ]
 }
 [e :U 1077 ]
-[; ;keyboard.c: 35: if (PORTBbits.RB6==1){key=15;while(PORTBbits.RB6==1){};}
-"35
+[; ;keyboard.c: 34: if (PORTBbits.RB6==1){key=15; while(PORTBbits.RB6==1){};}
+"34
 [e $ ! == -> . . _PORTBbits 0 6 `i -> 1 `i 1081  ]
 {
-[e = _key -> 15 `i ]
+[e = _key -> -> 15 `i `uc ]
 [e $U 1082  ]
 [e :U 1083 ]
 {
@@ -8126,17 +8146,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 1084 ]
 }
 [e :U 1081 ]
-"37
+"36
 }
-[; ;keyboard.c: 37: }
-[; ;keyboard.c: 38: _delay((unsigned long)((1)*(8000000/4000.0)));
-"38
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;keyboard.c: 41: return key;
-"41
+[; ;keyboard.c: 36: }
+[; ;keyboard.c: 40: return key;
+"40
 [e ) _key ]
 [e $UE 1036  ]
-[; ;keyboard.c: 42: }
-"42
+[; ;keyboard.c: 41: }
+"41
 [e :UE 1036 ]
 }
+[p f _sprintf 8422404 ]
+[a 1C 37 48 49 117 0 ]
+[a 2C 37 48 49 117 0 ]
+[a 3C 37 48 49 117 0 ]
+[a 4C 37 48 49 117 0 ]
+[a 5C 37 48 49 117 0 ]
+[a 6C 37 48 49 117 0 ]
+[a 7C 37 48 49 117 0 ]
+[a 8C 37 48 49 117 0 ]
+[a 9C 37 48 49 117 0 ]
+[a 10C 37 48 49 117 0 ]

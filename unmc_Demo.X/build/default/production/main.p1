@@ -18,8 +18,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [u S1025 `S1026 1 `uc -> 4 `i `ui -> 2 `i `ul 1 ]
 [n S1025 . f b w l ]
 "18 head.h
-[c E8295 0 1 2 .. ]
-[n E8295 . ACTIVE DESACTIVE TRIGGED  ]
+[c E8281 0 1 2 .. ]
+[n E8281 . ACTIVE DESACTIVE TRIGGED  ]
 "7249 C:\Program Files\Microchip\xc8\v1.34\include\pic18f26j50.h
 [s S503 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S503 . TUN PLLEN INTSRC ]
@@ -80,45 +80,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S843 . . . . . . ]
 "13166
 [v _T1CONbits `VS843 ~T0 @X0 0 e@4045 ]
-"6359
-[s S446 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S446 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"6369
-[s S447 :1 `uc 1 ]
-[n S447 . LB0 ]
-"6372
-[s S448 :1 `uc 1 :1 `uc 1 ]
-[n S448 . . LB1 ]
-"6376
-[s S449 :2 `uc 1 :1 `uc 1 ]
-[n S449 . . LB2 ]
-"6380
-[s S450 :3 `uc 1 :1 `uc 1 ]
-[n S450 . . LB3 ]
-"6384
-[s S451 :4 `uc 1 :1 `uc 1 ]
-[n S451 . . LB4 ]
-"6388
-[s S452 :5 `uc 1 :1 `uc 1 ]
-[n S452 . . LB5 ]
-"6392
-[s S453 :6 `uc 1 :1 `uc 1 ]
-[n S453 . . LB6 ]
-"6396
-[s S454 :7 `uc 1 :1 `uc 1 ]
-[n S454 . . LB7 ]
-"6358
-[u S445 `S446 1 `S447 1 `S448 1 `S449 1 `S450 1 `S451 1 `S452 1 `S453 1 `S454 1 ]
-[n S445 . . . . . . . . . . ]
-"6401
-[v _LATBbits `VS445 ~T0 @X0 0 e@3978 ]
-[v F8145 `(v ~T0 @X0 1 tf1`ul ]
-"161 C:\Program Files\Microchip\xc8\v1.34\include\pic18.h
-[v __delay `JF8145 ~T0 @X0 0 e ]
-[p i __delay ]
 [p mainexit ]
-"5 keyboard.h
-[v _read_keyboard `(uc ~T0 @X0 0 ef ]
+"7 leds.h
+[v _shutdown `(v ~T0 @X0 0 ef ]
+"8
+[v _on_led `(v ~T0 @X0 0 ef1`uc ]
+"4 keyboard.h
+[v _read_keyboard `(i ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f26j50.h: 49: extern volatile unsigned char RPOR0 @ 0xEC6;
@@ -7696,6 +7664,54 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\unmc_lcd_216.h: 107: void lcd_setcursor_vb(int8 visible, int8 blink);
 [; ;headers\unmc_lcd_216.h: 108: void lcd_puts(char *ptr);
 [; ;headers\unmc_lcd_216.h: 109: void lcd_putrs(const char *ptr);
+"15 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_config_01.h
+[p x CPUDIV=OSC1 ]
+"16
+[p x CP0=OFF ]
+"17
+[p x WDTEN=OFF ]
+"18
+[p x PLLDIV=1 ]
+"19
+[p x STVREN=ON ]
+"20
+[p x XINST=OFF ]
+"22
+[p x OSC=INTOSC ]
+"23
+[p x T1DIG=ON ]
+"24
+[p x LPT1OSC=OFF ]
+"25
+[p x FCMEN=OFF ]
+"26
+[p x IESO=OFF ]
+"27
+[p x WDTPS=32768 ]
+"28
+[p x DSWDTOSC=INTOSCREF ]
+"29
+[p x RTCOSC=T1OSCREF ]
+"30
+[p x DSBOREN=OFF ]
+"31
+[p x DSWDTEN=OFF ]
+"32
+[p x DSWDTPS=G2 ]
+"33
+[p x IOL1WAY=OFF ]
+"34
+[p x MSSP7B_EN=MSK7 ]
+"35
+[p x WPCFG=OFF ]
+"36
+[p x WPDIS=OFF ]
+"15 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
+[v _key `i ~T0 @X0 1 e ]
+[i _key
+-> 18 `i
+]
+[; ;headers\unmc_inout_02.h: 15: int key = 18;
 "17 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_rtcc_01.h
 [v _RtccTimeDate `S1027 ~T0 @X0 1 e ]
 [v _RtccAlrmTimeDate `S1027 ~T0 @X0 1 e ]
@@ -7840,72 +7856,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;headers\unmc_rtcc_01.h: 63: void DelayPORXLCD(void);
 [; ;headers\unmc_rtcc_01.h: 75: void Write_RTC(void);
 [; ;headers\unmc_rtcc_01.h: 112: void Read_RTC(void);
-"15 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_config_01.h
-[p x CPUDIV=OSC1 ]
-"16
-[p x CP0=OFF ]
-"17
-[p x WDTEN=OFF ]
-"18
-[p x PLLDIV=1 ]
-"19
-[p x STVREN=ON ]
-"20
-[p x XINST=OFF ]
-"22
-[p x OSC=INTOSC ]
-"23
-[p x T1DIG=ON ]
-"24
-[p x LPT1OSC=OFF ]
-"25
-[p x FCMEN=OFF ]
-"26
-[p x IESO=OFF ]
-"27
-[p x WDTPS=32768 ]
-"28
-[p x DSWDTOSC=INTOSCREF ]
-"29
-[p x RTCOSC=T1OSCREF ]
-"30
-[p x DSBOREN=OFF ]
-"31
-[p x DSWDTEN=OFF ]
-"32
-[p x DSWDTPS=G2 ]
-"33
-[p x IOL1WAY=OFF ]
-"34
-[p x MSSP7B_EN=MSK7 ]
-"35
-[p x WPCFG=OFF ]
-"36
-[p x WPDIS=OFF ]
-"15 C:/Archivos de programa/Unimic/unmc_01/headers\unmc_inout_02.h
-[v _key `uc ~T0 @X0 1 e ]
-[i _key
--> -> 18 `i `uc
-]
-[; ;headers\unmc_inout_02.h: 15: char key = 18;
-[; ;headers\unmc_lcd_216.h: 98: void lcd_send_nibble(int8 nibble);
-[; ;headers\unmc_lcd_216.h: 99: int8 lcd_read_nibble(void);
-[; ;headers\unmc_lcd_216.h: 100: int8 lcd_read_byte(void);
-[; ;headers\unmc_lcd_216.h: 101: void lcd_send_byte(int8 address, int8 n);
-[; ;headers\unmc_lcd_216.h: 103: void lcd_init(void);
-[; ;headers\unmc_lcd_216.h: 104: void lcd_gotoxy(int8 x, int8 y);
-[; ;headers\unmc_lcd_216.h: 105: void lcd_putc(int8 c);
-[; ;headers\unmc_lcd_216.h: 106: void lcd_comand(int8 d);
-[; ;headers\unmc_lcd_216.h: 107: void lcd_setcursor_vb(int8 visible, int8 blink);
-[; ;headers\unmc_lcd_216.h: 108: void lcd_puts(char *ptr);
-[; ;headers\unmc_lcd_216.h: 109: void lcd_putrs(const char *ptr);
 [; ;head.h: 14: typedef enum {
 [; ;head.h: 15: ACTIVE, DESACTIVE, TRIGGED,
 [; ;head.h: 16: } state;
 "18 head.h
-[v _state_alarm `E8295 ~T0 @X0 1 e ]
+[v _state_alarm `E8281 ~T0 @X0 1 e ]
 [i _state_alarm
-. `E8295 1
+. `E8281 1
 ]
 [; ;head.h: 18: state state_alarm = DESACTIVE;
 "19
@@ -7938,166 +7895,97 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;head.h: 23: int minDisparo = 0;
-[; ;keyboard.h: 5: char read_keyboard();
-"37 main.c
+[; ;leds.h: 7: void shutdown();
+[; ;leds.h: 8: void on_led(char pressed_key);
+[; ;keyboard.h: 4: int read_keyboard();
+"33 main.c
 [v _Setup `(v ~T0 @X0 1 ef ]
-"38
+"34
 {
-[; ;main.c: 37: void Setup(void)
-[; ;main.c: 38: {
+[; ;main.c: 33: void Setup(void)
+[; ;main.c: 34: {
 [e :U _Setup ]
 [f ]
-[; ;main.c: 39: OSCTUNEbits.INTSRC=1;
-"39
+[; ;main.c: 35: OSCTUNEbits.INTSRC=1;
+"35
 [e = . . _OSCTUNEbits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 40: OSCTUNEbits.PLLEN=0;
-"40
+[; ;main.c: 36: OSCTUNEbits.PLLEN=0;
+"36
 [e = . . _OSCTUNEbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 41: OSCCONbits.IRCF0=1;
-"41
+[; ;main.c: 37: OSCCONbits.IRCF0=1;
+"37
 [e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-[; ;main.c: 42: OSCCONbits.IRCF1=1;
-"42
+[; ;main.c: 38: OSCCONbits.IRCF1=1;
+"38
 [e = . . _OSCCONbits 1 4 -> -> 1 `i `uc ]
-[; ;main.c: 43: OSCCONbits.IRCF2=1;
-"43
+[; ;main.c: 39: OSCCONbits.IRCF2=1;
+"39
 [e = . . _OSCCONbits 1 5 -> -> 1 `i `uc ]
-[; ;main.c: 44: OSCCONbits.SCS0=0;
-"44
+[; ;main.c: 40: OSCCONbits.SCS0=0;
+"40
 [e = . . _OSCCONbits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 45: OSCCONbits.SCS1=0;
-"45
+[; ;main.c: 41: OSCCONbits.SCS1=0;
+"41
 [e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-[; ;main.c: 46: TRISA = 0b11110000;
-"46
-[e = _TRISA -> -> 240 `i `uc ]
-[; ;main.c: 47: TRISB = 0;
-"47
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 48: TRISC = 0b00000111;
+[; ;main.c: 42: TRISA = 0b01010111;
+"42
+[e = _TRISA -> -> 87 `i `uc ]
+[; ;main.c: 43: TRISB = 0b11100000;
+"43
+[e = _TRISB -> -> 224 `i `uc ]
+[; ;main.c: 44: TRISC = 0;
+"44
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;main.c: 48: ANCON0=0b11111111;
 "48
-[e = _TRISC -> -> 7 `i `uc ]
-[; ;main.c: 52: ANCON0=0b11111111;
-"52
 [e = _ANCON0 -> -> 255 `i `uc ]
-[; ;main.c: 54: ANCON1=0b11111111;
-"54
+[; ;main.c: 50: ANCON1=0b11111111;
+"50
 [e = _ANCON1 -> -> 255 `i `uc ]
-[; ;main.c: 57: RTCCFGbits.RTCEN=1;
-"57
+[; ;main.c: 53: RTCCFGbits.RTCEN=1;
+"53
 [e = . . _RTCCFGbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 58: RTCCFGbits.RTCWREN=1;
-"58
+[; ;main.c: 54: RTCCFGbits.RTCWREN=1;
+"54
 [e = . . _RTCCFGbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 59: T1CONbits.T1OSCEN=1;
-"59
+[; ;main.c: 55: T1CONbits.T1OSCEN=1;
+"55
 [e = . . _T1CONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 61: LATBbits.LATB2 = 0;;
-"61
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 62: LATBbits.LATB1 = 0;;
-"62
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 63: LATBbits.LATB0 = 0;;
-"63
-[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 64: }
-"64
+[; ;main.c: 60: }
+"60
 [e :UE 1035 ]
 }
-"72
-[v _on_led `(i ~T0 @X0 1 ef1`uc ]
-{
-[; ;main.c: 72: on_led(char key){
-[e :U _on_led ]
-[v _key `uc ~T0 @X0 1 r1 ]
-[f ]
-[v _i `i ~T0 @X0 1 a ]
-[; ;main.c: 73: int i = 0;
-"73
-[e = _i -> 0 `i ]
-"74
-[v _intensity `s ~T0 @X0 1 a ]
-[; ;main.c: 74: short intensity = (short)key * 2 - 1;
-[e = _intensity -> - * -> -> _key `s `i -> 2 `i -> 1 `i `s ]
-[; ;main.c: 76: for(i = 0; i < intensity; i++){
-"76
-{
-[e = _i -> 0 `i ]
-[e $U 1040  ]
-[e :U 1037 ]
-{
-[; ;main.c: 77: LATBbits.LATB2 = 1;;
-"77
-[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 78: _delay((unsigned long)((500)*(8000000/4000000.0)));
-"78
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"79
-}
-"76
-[e ++ _i -> 1 `i ]
-[e :U 1040 ]
-[e $ < _i -> _intensity `i 1037  ]
-[e :U 1038 ]
-"79
-}
-[; ;main.c: 79: }
-[; ;main.c: 81: for(i = intensity; i < 32; i++){
-"81
-{
-[e = _i -> _intensity `i ]
-[e $ < _i -> 32 `i 1041  ]
-[e $U 1042  ]
-[e :U 1041 ]
-{
-[; ;main.c: 82: LATBbits.LATB2 = 0;;
-"82
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 83: _delay((unsigned long)((500)*(8000000/4000000.0)));
-"83
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"84
-}
-"81
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 32 `i 1041  ]
-[e :U 1042 ]
-"84
-}
-[; ;main.c: 84: }
-[; ;main.c: 85: }
-"85
-[e :UE 1036 ]
-}
-"87
+"67
 [v _main `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 87: int main(void){
+[; ;main.c: 67: int main(void){
 [e :U _main ]
 [f ]
-[; ;main.c: 88: Setup();
-"88
+[; ;main.c: 68: Setup();
+"68
 [e ( _Setup ..  ]
-[; ;main.c: 91: while(1){
-"91
-[e :U 1046 ]
+[; ;main.c: 69: shutdown();
+"69
+[e ( _shutdown ..  ]
+[; ;main.c: 70: while(1){
+"70
+[e :U 1038 ]
 {
-[; ;main.c: 93: on_led(read_keyboard());
-"93
-[e ( _on_led (1 ( _read_keyboard ..  ]
-"116
+[; ;main.c: 79: on_led(read_keyboard());
+"79
+[e ( _on_led (1 -> ( _read_keyboard ..  `uc ]
+"80
 }
-[e :U 1045 ]
-"91
-[e $U 1046  ]
-[e :U 1047 ]
-[; ;main.c: 116: }
-[; ;main.c: 117: return 0;
-"117
+[e :U 1037 ]
+"70
+[e $U 1038  ]
+[e :U 1039 ]
+[; ;main.c: 80: }
+[; ;main.c: 81: return 0;
+"81
 [e ) -> 0 `i ]
-[e $UE 1044  ]
-[; ;main.c: 118: }
-"118
-[e :UE 1044 ]
+[e $UE 1036  ]
+[; ;main.c: 82: }
+"82
+[e :UE 1036 ]
 }
